@@ -11,7 +11,7 @@ import { parseCsv } from "https://denopkg.com/hashrock/deno-fnparse/parsers/csv.
   const csv = new TextDecoder().decode(await process.output());
   process.close();
 
-  const rows = parseCsv(csv) as string[][];
+  const rows = parseCsv(csv.trim()) as string[][];
 
   const table = args[1].slice(0, -4);
   const encoder = new TextEncoder();

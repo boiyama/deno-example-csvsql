@@ -9,6 +9,6 @@ import { parseCsv } from "https://denopkg.com/hashrock/deno-fnparse/parsers/csv.
   const csv = new TextDecoder().decode(await process.output());
   process.close();
 
-  const rows = parseCsv(csv);
+  const rows = parseCsv(csv.trim());
   console.log(rows);
 })();
